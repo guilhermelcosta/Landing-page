@@ -1,0 +1,283 @@
+.home,
+.contact-main-heading {
+  padding-top: 56px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-text,
+.contact-text {
+  max-width: 64rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-img,
+.contact-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+
+.intro,
+.pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-content,
+.pricing-content {
+  max-width: 64rem;
+  text-align: center;
+}
+
+.grid-content,
+.gallery-content {
+  min-height: 100vh;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.grid-content h2 + p,
+.gallery-content h2 + p {
+  position: relative;
+  bottom: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  counter-reset: grid-counter;
+}
+
+.grid article h3::before {
+  counter-increment: grid-counter;
+  content: counter(grid-counter);
+  position: relative;
+  right: 2rem;
+  font-style: italic;
+  font-size: 7rem;
+}
+
+.gallery {
+  padding: 10rem 0;
+}
+
+.gallery-image {
+  width: 100%;
+  max-width: 36rem;
+  max-height: 36rem;
+  overflow: hidden;
+}
+
+.gallery-image img {
+  transition: all 300ms ease-in-out;
+}
+
+.gallery-image img:hover {
+  transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.contact-form {
+  max-width: 128rem;
+  margin: 0 auto;
+}
+
+.form-grid {
+  border: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.form-grid legend {
+  margin-bottom: 4rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.form-group {
+  flex: 1 1 32rem;
+  margin: 0 2rem;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 3rem 1rem;
+  margin: 1rem 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.form-group ::placeholder {
+  font-size: 2.3rem;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(227, 227, 227);
+}
+
+.form-group button {
+  width: 25rem;
+  height: 8rem;
+  background: none;
+  border: 0.5rem solid white;
+  /* Button */
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+
+footer {
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+
+footer a {
+  color: initial;
+  transition: all 200ms ease-in-out;
+}
+
+footer a:hover {
+  color: green;
+}
+
+.close-menu {
+  display: none;
+}
+
+.back-to-top {
+  position: fixed;
+  background: white;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  line-height: 5rem;
+  text-align: center;
+  border-radius: 50%;
+  color: black;
+  border: 0.1rem solid black;
+  rotate: -90deg;
+  right: 5rem;
+  bottom: 5rem;
+  transition: all 200ms ease-in-out;
+}
+
+.back-to-top:hover {
+  color: crimson;
+}
+
+@media (max-width: 800px) {
+  .home,
+  .grid-one,
+  .grid-two {
+    padding: 10rem 0;
+  }
+
+  .home,
+  .contact-main-heading {
+    display: block;
+  }
+
+  .home-img,
+  .contact-img {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .gallery-image img {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+  }
+
+  h3 {
+    font-size: 3.4rem;
+  }
+
+  h4 {
+    font-size: 3.2rem;
+  }
+
+  h5 {
+    font-size: 3rem;
+  }
+
+  h6 {
+    font-size: 2.8rem;
+  }
+
+  body .menu-content {
+    bottom: 0;
+    display: none;
+  }
+
+  .menu-content ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .menu-content ul {
+    margin: 10rem 0 30rem;
+  }
+
+  .menu-content ul li {
+    padding-top: 3rem;
+  }
+
+  .menu-content h1 {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .close-menu-label::after {
+    content: "≡";
+    position: fixed;
+    top: 1rem;
+    right: 5rem;
+    font-size: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    width: 4rem;
+    height: 4rem;
+    z-index: 2;
+  }
+
+  .close-menu:checked ~ .menu-content {
+    display: block;
+  }
+
+  /* Porque isso nao funcionou? */
+  .close-menu:checked ~ .close-menu-label::after {
+    content: "x";
+  }
+}

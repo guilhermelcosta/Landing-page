@@ -1,0 +1,14 @@
+.main-bg {
+  background-image: url("../img/main-bg.svg");
+  color: var(--white-color);
+  min-height: 100vh;
+}
+
+.white-bg {
+  background: white;
+  min-height: 100vh;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
